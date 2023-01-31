@@ -1,0 +1,34 @@
+{{- $previousYear := "nil" -}}
+{{- range .conventions -}}
+	{{- $year := (time .start_date).Year -}}
+	{{- if ne $year $previousYear -}}
+		{{- if ne $previousYear "nil" -}}
+			</ol>
+		{{- end -}}
+		<h2>{{ $year }}</h2>
+		<ol class="convention-list">
+		{{- $previousYear = $year -}}
+	{{- end -}}
+	<li class="convention-status-{{ urlize .status }}">
+		<p class="convention-name"><strong>{{ .name }}</strong></p>
+		<ul class="convention-tags">
+			{{- if ne .status "Attending" }}
+				<li style="background-color: {{ index $.page.Site.Data.fancons.tagColors.status .status }}">{{ .status }}</li>
+			{{- end -}}
+			<li style="background-color: {{ index $.page.Site.Data.fancons.tagColors.genre .genre }}">{{ .genre }}</li>
+			{{- range .extra_tags -}}
+				<li style="background-color: {{ index $.page.Site.Data.fancons.tagColors.extra . }}">{{ . }}</li>
+			{{- end -}}
+		</ul>
+		{{- with .note -}}
+			<p class="convention-note">({{ . }})</p>
+		{{- end -}}
+		{{- if .start_date -}}
+			<p class="convention-info">{{ partial "fancons/format-date-range.html" (dict "startDate" .start_date "endDate" .end_date) }}</p>
+		{{- end -}}
+		{{- with .location -}}
+			<p class="convention-info">{{ partial "fancons/format-location.html" . }}</p>
+		{{- end -}}
+	</li>
+{{- end -}}
+</ol>

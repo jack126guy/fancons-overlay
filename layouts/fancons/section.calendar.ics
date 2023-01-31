@@ -1,0 +1,24 @@
+{{- $conventions := .Site.Data.fancons.conventions -}}
+{{- $datedConventions := where $conventions "start_date" "!=" nil -}}
+{{- $sortedConventions := sort $datedConventions "start_date" "asc" -}}
+{{- $currentDate := partial "fancons/get-current-date.html" . -}}
+{{- $statusDict := dict "Attending" "CONFIRMED" "Tentative" "TENTATIVE" "Not Attending" "CANCELLED" -}}
+BEGIN:VCALENDAR
+PRODID:-//Jack Fox Grayson//Fan Convention Calendar//EN
+VERSION:2.0
+NAME:{{ partial "fancons/icalendar-backslash.html" .Params.icalendar.name }}
+{{- range $sortedConventions }}
+BEGIN:VEVENT
+UID:{{ urlize .name }}{{ $.Params.icalendar.uidsuffix }}
+SUMMARY:{{ partial "fancons/icalendar-backslash.html" .name }}
+DTSTART:{{ (time .start_date).Format "20060102" }}
+DTEND:{{ (time .end_date).AddDate 0 0 1 | time.Format "20060102" }}
+DESCRIPTION:{{ partial "fancons/icalendar-backslash.html" .note }}
+LOCATION:{{ .location | partial "fancons/format-location.html" | partial "fancons/icalendar-backslash.html" }}
+CATEGORIES:{{ partial "fancons/icalendar-backslash.html" .genre }}
+STATUS:{{ index $statusDict .status }}
+X-EXTRA-TAGS:{{ with .extra_tags }}{{ partial "fancons/icalendar-backslash.html" (index . 0) }}{{ range after 1 . }},{{ partial "fancons/icalendar-backslash.html" . }}{{ end }}{{ end }}
+DTSTAMP:{{ $currentDate.UTC.Format "20060102T150405Z" }}
+END:VEVENT
+{{- end }}
+END:VCALENDAR

@@ -1,0 +1,2 @@
+{{- $currentDate := partial "fancons/get-current-date.html" . -}}
+<p>Last updated <time datetime="{{ $currentDate.Format "2006-01-02" }}">{{ $currentDate.Format "2 January 2006" }}</time></p>

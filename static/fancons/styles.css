@@ -1,0 +1,36 @@
+.convention-list, .convention-tags {
+	list-style-type: none;
+	padding: 0em;
+}
+.convention-list li {
+	margin: 0.75em 0em;
+}
+.convention-list * {
+	margin: 0em;
+}
+.convention-name, .convention-tags, .convention-tags li {
+	display: inline-block;
+	vertical-align: middle;
+}
+.convention-name {
+	font-size: 1.5em;
+}
+.convention-name strong {
+	font-weight: normal;
+}
+.convention-tags li {
+	font-size: 0.75em;
+	margin: 0.25em;
+	padding: 0.5em;
+	color: #000000;
+	background-color: #cccccc;
+}
+.convention-status-tentative, .convention-status-not-attending {
+	color: #cccccc;
+}
+.convention-status-tentative .convention-name {
+	font-style: italic;
+}
+.convention-status-not-attending .convention-name {
+	text-decoration: line-through;
+}

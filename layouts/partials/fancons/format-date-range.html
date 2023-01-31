@@ -1,0 +1,11 @@
+{{- $start := time .startDate -}}
+{{- $end := time .endDate -}}
+{{- if ne $start.Year $end.Year -}}
+	<time datetime="{{ $start.Format "2006-01-02" }}">{{ $start.Format "2 January 2006" }}</time>–<time datetime="{{ $end.Format "2006-01-02" }}">{{ $end.Format "2 January 2006" }}</time>
+{{- else if ne $start.Month $end.Month -}}
+	<time datetime="{{ $start.Format "2006-01-02" }}">{{ $start.Format "2 January" }}</time>–<time datetime="{{ $end.Format "2006-01-02" }}">{{ $end.Format "2 January" }} {{ $start.Format "2006" }}</time>
+{{- else if ne $start.Day $end.Day -}}
+	<time datetime="{{ $start.Format "2006-01-02" }}">{{ $start.Format "2" }}</time>–<time datetime="{{ $end.Format "2006-01-02" }}">{{ $end.Format "2" }} {{ $start.Format "January 2006" }}</time>
+{{- else -}}
+	<time datetime="{{ $start.Format "2006-01-02" }}">{{ $start.Format "2 January 2006" }}</time>
+{{- end -}}

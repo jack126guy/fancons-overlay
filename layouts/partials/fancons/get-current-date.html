@@ -1,0 +1,5 @@
+{{- $date := now -}}
+{{- if .Site.Params.fancons.dateOverride -}}
+	{{- $date = time .Site.Params.fancons.dateOverride -}}
+{{- end -}}
+{{- return $date -}}
