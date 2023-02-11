@@ -1,4 +1,4 @@
-<li class="convention-status-{{ urlize .convention.status }}">
+<li data-status="{{ htmlEscape .convention.status }}">
 	<p class="convention-name"><strong>{{ .convention.name }}</strong></p>
 	<ul class="convention-tags">
 		{{- if ne .convention.status "Attending" }}

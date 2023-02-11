@@ -25,12 +25,12 @@
 	color: #000000;
 	background-color: #cccccc;
 }
-.convention-status-tentative, .convention-status-not-attending {
+.convention-list [data-status="Tentative"], .convention-list [data-status="Not Attending"] {
 	color: #cccccc;
 }
-.convention-status-tentative .convention-name {
+.convention-list [data-status="Tentative"] .convention-name {
 	font-style: italic;
 }
-.convention-status-not-attending .convention-name {
+.convention-list [data-status="Not Attending"] .convention-name {
 	text-decoration: line-through;
 }
