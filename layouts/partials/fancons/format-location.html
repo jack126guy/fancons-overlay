@@ -1,1 +1,1 @@
-{{ .locality }}, {{ with .region }}{{ . }}, {{ end }}{{ .country }}
+{{ with .locality }}{{ . }}, {{ end }}{{ with .region }}{{ . }}, {{ end }}{{ .country }}
