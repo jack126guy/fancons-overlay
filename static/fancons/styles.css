@@ -8,15 +8,24 @@
 .convention-list * {
 	margin: 0em;
 }
-.convention-name, .convention-tags, .convention-tags li {
+.convention-header, .convention-header *, .convention-tags li {
 	display: inline-block;
 	vertical-align: middle;
 }
-.convention-name {
-	font-size: 1.5em;
+.convention-header {
+	padding: 0em 0.375em;
 }
-.convention-name strong {
-	font-weight: normal;
+.convention-name {
+	margin: 0.375em 0em;
+	color: #000000;
+}
+.convention-genre {
+	font-size: 0.75em;
+	margin: 0.75em 0em;
+	color: #000000;
+}
+.convention-tags {
+	margin: 0em -0.1875em;
 }
 .convention-tags li {
 	font-size: 0.75em;

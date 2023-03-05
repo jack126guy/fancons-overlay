@@ -1,9 +1,11 @@
 <li data-status="{{ htmlEscape .convention.status }}">
-	<p class="convention-name"><strong>{{ .convention.name }}</strong></p>
+	<p class="convention-header" {{ with .convention.genre }}style="background-color: {{ index $.tagColors.genre . }}"{{ end }}>
+		<strong class="convention-name">{{ .convention.name }}</strong>
+		{{- with .convention.genre }}
+			<span class="convention-genre">({{ . }})</span>
+		{{ end -}}
+	</p>
 	<ul class="convention-tags">
-		{{- with .convention.genre -}}
-			<li style="background-color: {{ index $.tagColors.genre . }}"><strong>{{ . }}</strong></li>
-		{{- end -}}
 		{{- if ne .convention.status "Attending" -}}
 			<li style="background-color: {{ index $.tagColors.status .convention.status }}">{{ .convention.status }}</li>
 		{{- end -}}
