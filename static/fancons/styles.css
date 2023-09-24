@@ -26,6 +26,12 @@
 	color: #000000;
 	background-color: #cccccc;
 }
+.convention-tags .convention-genre {
+	border-style: solid;
+	border-width: 0.25em;
+	padding: 0.25em;
+	background-color: transparent;
+}
 .convention-list [data-status="Tentative"], .convention-list [data-status="Not Attending"] {
 	color: #cccccc;
 }
