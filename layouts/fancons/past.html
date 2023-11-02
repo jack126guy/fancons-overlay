@@ -12,6 +12,6 @@
 		{{- $currentDate := partial "fancons/get-current-date.html" . -}}
 		{{- $pastConventions := where $conventions "start_date" "<" ($currentDate.Format "2006-01-02") -}}
 		{{- $sortedConventions := sort $pastConventions "start_date" "desc" -}}
-		{{- partial "fancons/yearly-convention-list.html" (dict "conventions" $sortedConventions "page" .) -}}
+		{{- partial "fancons/yearly-convention-list.html" $sortedConventions -}}
 	</article>
 {{- end -}}

@@ -1,5 +1,5 @@
 <ol class="convention-list">
-{{- range .conventions -}}
-	{{- partial "fancons/convention-list-item.html" (dict "convention" . "tagColors" $.page.Site.Data.fancons.tagColors) -}}
+{{- range . -}}
+	{{- partial "fancons/convention-list-item.html" . -}}
 {{- end -}}
 </ol>

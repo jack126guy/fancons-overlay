@@ -1,23 +1,23 @@
-<li data-status="{{ htmlEscape .convention.status }}" data-genre="{{ htmlEscape .convention.genre }}">
-	<p class="convention-name"><strong>{{ .convention.name }}</strong></p>
+<li data-status="{{ htmlEscape .status }}" data-genre="{{ htmlEscape .genre }}">
+	<p class="convention-name"><strong>{{ .name }}</strong></p>
 	<ul class="convention-tags">
-		{{- with .convention.genre -}}
+		{{- with .genre -}}
 			<li class="convention-genre">{{ . }}</li>
 		{{- end -}}
-		{{- if ne .convention.status "Attending" -}}
-			<li class="convention-status"><strong>{{ .convention.status }}</strong></li>
+		{{- if ne .status "Attending" -}}
+			<li class="convention-status"><strong>{{ .status }}</strong></li>
 		{{- end -}}
-		{{- range .convention.extra_tags -}}
+		{{- range .extra_tags -}}
 			<li data-extra-tag="{{ htmlEscape . }}">{{ . }}</li>
 		{{- end -}}
 	</ul>
-	{{- with .convention.note -}}
+	{{- with .note -}}
 		<p class="convention-note">({{ . }})</p>
 	{{- end -}}
-	{{- if .convention.start_date -}}
-		<p class="convention-info">{{ partial "fancons/format-date-range.html" (dict "startDate" .convention.start_date "endDate" .convention.end_date) }}</p>
+	{{- if .start_date -}}
+		<p class="convention-info">{{ partial "fancons/format-date-range.html" (dict "startDate" .start_date "endDate" .end_date) }}</p>
 	{{- end -}}
-	{{- with .convention.location -}}
+	{{- with .location -}}
 		<p class="convention-info">{{ partial "fancons/format-location.html" . }}</p>
 	{{- end -}}
 </li>

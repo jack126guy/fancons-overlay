@@ -1,5 +1,5 @@
 {{- $previousYear := "nil" -}}
-{{- range .conventions -}}
+{{- range . -}}
 	{{- $year := (time .start_date).Year -}}
 	{{- if ne $year $previousYear -}}
 		{{- if ne $previousYear "nil" -}}
@@ -9,6 +9,6 @@
 		<ol class="convention-list">
 		{{- $previousYear = $year -}}
 	{{- end -}}
-	{{- partial "fancons/convention-list-item.html" (dict "convention" . "tagColors" $.page.Site.Data.fancons.tagColors) -}}
+	{{- partial "fancons/convention-list-item.html" . -}}
 {{- end -}}
 </ol>
