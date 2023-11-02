@@ -1,16 +1,16 @@
 {{- $tagColors := .Site.Data.fancons.tagColors -}}
-{{ range $genre, $color := $tagColors.genre }}
+{{- range $genre, $color := $tagColors.genre -}}
 .convention-list li[data-genre="{{ $genre }}"] .convention-genre {
 	color: {{ $color }};
 }
-{{ end }}
-{{ range $status, $color := $tagColors.status }}
+{{ end -}}
+{{- range $status, $color := $tagColors.status -}}
 .convention-list li[data-status="{{ $status }}"] .convention-status {
 	background-color: {{ $color }};
 }
-{{ end }}
-{{ range $tag, $color := $tagColors.extra }}
+{{ end -}}
+{{- range $tag, $color := $tagColors.extra -}}
 .convention-list li[data-extra-tag="{{ $tag }}"] {
 	background-color: {{ $color }};
 }
-{{ end }}
+{{ end -}}
