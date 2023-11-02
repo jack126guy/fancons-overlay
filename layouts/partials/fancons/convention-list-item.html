@@ -1,14 +1,14 @@
-<li data-status="{{ htmlEscape .convention.status }}">
+<li data-status="{{ htmlEscape .convention.status }}" data-genre="{{ htmlEscape .convention.genre }}">
 	<p class="convention-name"><strong>{{ .convention.name }}</strong></p>
 	<ul class="convention-tags">
 		{{- with .convention.genre -}}
-			<li class="convention-genre" style="color: {{ index $.tagColors.genre . }}">{{ . }}</li>
+			<li class="convention-genre">{{ . }}</li>
 		{{- end -}}
 		{{- if ne .convention.status "Attending" -}}
-			<li style="background-color: {{ index $.tagColors.status .convention.status }}"><strong>{{ .convention.status }}</strong></li>
+			<li class="convention-status"><strong>{{ .convention.status }}</strong></li>
 		{{- end -}}
 		{{- range .convention.extra_tags -}}
-			<li style="background-color: {{ index $.tagColors.extra . }}">{{ . }}</li>
+			<li data-extra-tag="{{ htmlEscape . }}">{{ . }}</li>
 		{{- end -}}
 	</ul>
 	{{- with .convention.note -}}
