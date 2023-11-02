@@ -1,22 +1,20 @@
-.convention-list, .convention-tags {
-	list-style-type: none;
-	padding: 0em;
-}
-.convention-list li {
+.convention-entry {
 	margin-top: 0.75em;
 	margin-bottom: 1.5em;
 }
-.convention-list * {
+.convention-entry * {
 	margin: 0em;
 }
-.convention-name, .convention-tags, .convention-tags li {
+.convention-tags {
+	list-style-type: none;
+	padding: 0em;
+}
+.convention-entry h3, .convention-tags, .convention-tags li {
 	display: inline-block;
 	vertical-align: middle;
 }
-.convention-name {
+.convention-entry h3 {
 	font-size: 1.5em;
-}
-.convention-name strong {
 	font-weight: normal;
 }
 .convention-tags li {
@@ -32,12 +30,12 @@
 	padding: 0.25em;
 	background-color: transparent;
 }
-.convention-list [data-status="Tentative"], .convention-list [data-status="Not Attending"] {
+.convention-entry[data-status="Tentative"], .convention-entry[data-status="Not Attending"] {
 	color: #cccccc;
 }
-.convention-list [data-status="Tentative"] .convention-name {
+.convention-entry[data-status="Tentative"] h3 {
 	font-style: italic;
 }
-.convention-list [data-status="Not Attending"] .convention-name {
+.convention-entry[data-status="Not Attending"] h3 {
 	text-decoration: line-through;
 }

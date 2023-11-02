@@ -1,5 +1,5 @@
-<li data-status="{{ htmlEscape .status }}" data-genre="{{ htmlEscape .genre }}">
-	<p class="convention-name"><strong>{{ .name }}</strong></p>
+<section class="convention-entry" data-status="{{ htmlEscape .status }}" data-genre="{{ htmlEscape .genre }}">
+	<h3>{{ .name }}</h3>
 	<ul class="convention-tags">
 		{{- with .genre -}}
 			<li class="convention-genre">{{ . }}</li>
@@ -20,4 +20,4 @@
 	{{- with .location -}}
 		<p class="convention-info">{{ partial "fancons/format-location.html" . }}</p>
 	{{- end -}}
-</li>
+</section>

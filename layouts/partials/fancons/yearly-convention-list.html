@@ -2,11 +2,7 @@
 {{- range . -}}
 	{{- $year := (time .start_date).Year -}}
 	{{- if ne $year $previousYear -}}
-		{{- if ne $previousYear "nil" -}}
-			</ol>
-		{{- end -}}
 		<h2>{{ $year }}</h2>
-		<ol class="convention-list">
 		{{- $previousYear = $year -}}
 	{{- end -}}
 	{{- partial "fancons/convention-list-item.html" . -}}
