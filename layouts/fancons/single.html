@@ -1,0 +1,11 @@
+{{- define "head-extra" -}}
+	{{- partial "fancons/styles.html" . -}}
+{{- end -}}
+{{- define "main" -}}
+	<article>
+		<h1>{{ .Title }}</h1>
+		{{- .Content -}}
+
+		{{- partial "fancons/last-updated.html" . -}}
+	</article>
+{{- end -}}
