@@ -8,10 +8,8 @@
 	{{- end -}}
 {{- end -}}
 {{- define "main" -}}
-	<article>
-		<h1>{{ .Title }}</h1>
-		{{- .Content -}}
-
-		{{- partial "fancons/last-updated.html" . -}}
-	</article>
+	{{- partial "graybase/main/single.html" . -}}
+{{- end -}}
+{{- define "footer" -}}
+	{{- partial "fancons/last-updated.html" . -}}
 {{- end -}}
