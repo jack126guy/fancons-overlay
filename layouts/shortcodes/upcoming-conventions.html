@@ -8,4 +8,6 @@
 {{- if $undatedConventions -}}
 	<h2>Dates TBD</h2>
 	{{- partial "fancons/simple-convention-list.html" $undatedConventions -}}
+{{- else if not $upcomingConventions -}}
+	<p>No upcoming conventions</p>
 {{- end -}}
