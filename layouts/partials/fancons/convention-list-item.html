@@ -1,9 +1,9 @@
 <section class="convention-entry" data-status="{{ .status }}" data-genre="{{ .genre }}">
 	<h3>{{ .name }}</h3>
+	{{- with .genre -}}
+		<p class="convention-genre">({{ . }})</p>
+	{{- end -}}
 	<ul class="convention-tags">
-		{{- with .genre -}}
-			<li class="convention-genre">{{ . }}</li>
-		{{- end -}}
 		{{- if ne .status "Attending" -}}
 			<li class="convention-status"><strong>{{ .status }}</strong></li>
 		{{- end -}}

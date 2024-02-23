@@ -9,7 +9,7 @@
 	list-style-type: none;
 	padding: 0em;
 }
-.convention-entry h3, .convention-tags, .convention-tags li {
+.convention-entry h3, .convention-genre, .convention-tags, .convention-tags li {
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -17,18 +17,16 @@
 	font-size: 1.5em;
 	font-weight: normal;
 }
+.convention-genre {
+	margin: 0.25em;
+	background-color: transparent;
+}
 .convention-tags li {
 	font-size: 0.75em;
 	margin: 0.25em;
 	padding: 0.5em;
 	color: #000000;
 	background-color: #cccccc;
-}
-.convention-tags .convention-genre {
-	border-style: solid;
-	border-width: 0.25em;
-	padding: 0.25em;
-	background-color: transparent;
 }
 .convention-entry[data-status="Tentative"], .convention-entry[data-status="Not Attending"] {
 	color: #cccccc;
