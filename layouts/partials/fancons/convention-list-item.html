@@ -1,4 +1,4 @@
-<section class="convention-entry" data-status="{{ htmlEscape .status }}" data-genre="{{ htmlEscape .genre }}">
+<section class="convention-entry" data-status="{{ .status }}" data-genre="{{ .genre }}">
 	<h3>{{ .name }}</h3>
 	<ul class="convention-tags">
 		{{- with .genre -}}
@@ -8,7 +8,7 @@
 			<li class="convention-status"><strong>{{ .status }}</strong></li>
 		{{- end -}}
 		{{- range .extra_tags -}}
-			<li data-extra-tag="{{ htmlEscape . }}">{{ . }}</li>
+			<li data-extra-tag="{{ . }}">{{ . }}</li>
 		{{- end -}}
 	</ul>
 	{{- with .note -}}
